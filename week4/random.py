@@ -1,7 +1,17 @@
 from random import randint
-n=int(input())
-a=list(map(int,input()))
-for i in range(n-1):
-	a.append(int(input()))
-a.sort()
-print(*a,end="")
+
+def issorted(a):
+  for i in range(1,n):
+    if(a[i-1]>a[i]):
+      return False;
+  return True;
+
+n=int(input());
+a=[]
+for i in range(n):
+  a.append(int(input()))
+while(not issorted(a)):
+  i=randint(0,n-1);
+  j=randint(0,n-1);
+  a[i],a[j]=a[j],a[i]
+print(" ".join(map(str,a)),end="");
