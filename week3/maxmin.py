@@ -1,6 +1,3 @@
 n=list(map(int,input().split()))
-n.remove(max(n))
-n.remove(min(n))
-l=max(n)
-m=min(n)
-print(l,m,end="")
+n.sort()
+print(n[-2],n[1],end="")
