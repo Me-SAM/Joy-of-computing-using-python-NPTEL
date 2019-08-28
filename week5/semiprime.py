@@ -3,7 +3,6 @@ import sympy
 n=int(input())
 a=list(sympy.primerange(2,n+1))
 a.sort()
-print('primes =',*a)
 semiprime=[]
 for i in a:
 	for j in a:
