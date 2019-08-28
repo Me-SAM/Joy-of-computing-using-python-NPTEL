@@ -14,7 +14,6 @@ semiprimes=[]
 for num in semiprime:
 	if num not in semiprimes:
 		semiprimes.append(num)
-print('semiprimes =',*semiprimes)
 sums=[]
 for i in semiprime:
 	for j in semiprime:
@@ -24,7 +23,6 @@ for num in sums:
 	if num not in sumof:
 		sumof.append(num)
 		sumof.sort()
-print('sum of semiprimes=',*sumof)
 
 if n not in sumof:
 	print('No',end="")
