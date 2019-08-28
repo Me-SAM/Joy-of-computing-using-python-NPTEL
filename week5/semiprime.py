@@ -1,29 +1,32 @@
-def issemiprime(n):
-    
-    i,c=2,0
-    while(i<=int(n**0.5)):
-        same=0
-        while(not n%i):
-            same+=1
-            n=int(n/i)
-        i+=1
-        c+=same
-        if(c>2 or same>=2):
-            return False
-    if(n>=2):
-        c+=1
-    if(c==2):
-        return True
-    else:
-        return False
+import sympy
 
-def issumsemiprime(n):
-    if(n<=3):
-        return False
-    for i in range(2,n):
-        if(issemiprime(i) and issemiprime(n-i)):
-            return True
-    return False
+n=int(input())
+a=list(sympy.primerange(2,n+1))
+a.sort()
+print('primes =',*a)
+semiprime=[]
+for i in a:
+	for j in a:
+		if i!=j:
+			semiprime.append(i*j)
+semiprime.sort()
+semiprimes=[]
+for num in semiprime:
+	if num not in semiprimes:
+		semiprimes.append(num)
+print('semiprimes =',*semiprimes)
+sums=[]
+for i in semiprime:
+	for j in semiprime:
+		sums.append(i+j)
+sumof=[]
+for num in sums:
+	if num not in sumof:
+		sumof.append(num)
+		sumof.sort()
+print('sum of semiprimes=',*sumof)
 
-n=int(input());
-print('Yes' if issumsemiprime(n) else 'No',end="")
+if n not in sumof:
+	print('No',end="")
+else:
+	print('Yes',end="")
