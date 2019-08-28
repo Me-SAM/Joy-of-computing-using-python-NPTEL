@@ -17,7 +17,7 @@ printPrime(n)
 semiprime=[]
 for i in a:
 	for j in a:
-		if i!=j:
+		if i!=j and i*j<100:
 			semiprime.append(i*j)
 semiprime.sort()
 semiprimes=[]
@@ -33,7 +33,6 @@ for num in sums:
 	if num not in sumof:
 		sumof.append(num)
 		sumof.sort()
-
 if n not in sumof:
 	print('No',end="")
 else:
