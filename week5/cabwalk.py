@@ -4,6 +4,6 @@ d_arun=(2**(1/2))*n
 time_cab=d_cab/v2
 time_arun=d_arun/v1
 if(time_arun<time_cab):
-	print('walk',end="")
+	print('Walk',end="")
 else:
-	print('cab',end="")
+	print('Cab',end="")
